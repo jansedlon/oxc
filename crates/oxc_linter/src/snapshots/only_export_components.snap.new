@@ -1,0 +1,9 @@
+---
+source: crates/oxc_linter/src/tester.rs
+assertion_line: 216
+---
+  ⚠ eslint-plugin-react-refresh(only-export-components): This rule can't verify that `export *` only exports components.
+   ╭─[only_export_components.tsx:1:1]
+ 1 │ export * from 'react';
+   · ──────────────────────
+   ╰────

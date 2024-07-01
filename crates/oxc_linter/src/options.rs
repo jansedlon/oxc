@@ -28,6 +28,7 @@ pub struct LintOptions {
     pub jsx_a11y_plugin: bool,
     pub nextjs_plugin: bool,
     pub react_perf_plugin: bool,
+    pub react_refresh_plugin: bool,
 }
 
 impl Default for LintOptions {
@@ -37,6 +38,7 @@ impl Default for LintOptions {
             config_path: None,
             fix: false,
             react_plugin: true,
+            react_refresh_plugin: true,
             unicorn_plugin: true,
             typescript_plugin: true,
             oxc_plugin: true,
@@ -135,6 +137,12 @@ impl LintOptions {
     #[must_use]
     pub fn with_react_perf_plugin(mut self, yes: bool) -> Self {
         self.react_perf_plugin = yes;
+        self
+    }
+
+    #[must_use]
+    pub fn with_react_refresh_plugin(mut self, yes: bool) -> Self {
+        self.react_refresh_plugin = yes;
         self
     }
 }
@@ -300,6 +308,7 @@ impl LintOptions {
                 "jsx_a11y" => self.jsx_a11y_plugin,
                 "nextjs" => self.nextjs_plugin,
                 "react_perf" => self.react_perf_plugin,
+                "react_refresh" => self.react_refresh_plugin,
                 "oxc" => self.oxc_plugin,
                 "eslint" | "tree_shaking" => true,
                 name => panic!("Unhandled plugin: {name}"),

@@ -237,6 +237,10 @@ mod react_perf {
     pub mod jsx_no_new_object_as_prop;
 }
 
+mod react_refresh {
+    pub mod only_export_components;
+}
+
 mod unicorn {
     pub mod catch_error_name;
     pub mod empty_brace_spaces;
@@ -705,6 +709,7 @@ oxc_macros::declare_all_lint_rules! {
     react_perf::jsx_no_new_array_as_prop,
     react_perf::jsx_no_new_function_as_prop,
     react_perf::jsx_no_new_object_as_prop,
+    react_refresh::only_export_components,
     import::default,
     import::export,
     import::max_dependencies,

@@ -49,6 +49,9 @@ const JSDOC_TEST_PATH: &str =
 const REACT_PERF_TEST_PATH: &str =
     "https://raw.githubusercontent.com/cvazac/eslint-plugin-react-perf/main/tests/lib/rules";
 
+const REACT_REFRESH_TEST_PATH: &str =
+    "https://raw.githubusercontent.com/arnaudbarre/eslint-plugin-react-refresh/main/src";
+
 const NODE_TEST_PATH: &str =
     "https://raw.githubusercontent.com/eslint-community/eslint-plugin-n/master/tests/lib/rules";
 
@@ -559,6 +562,7 @@ pub enum RuleKind {
     Unicorn,
     React,
     ReactPerf,
+    ReactRefresh,
     JSXA11y,
     Oxc,
     NextJS,
@@ -575,6 +579,7 @@ impl RuleKind {
             "unicorn" => Self::Unicorn,
             "react" => Self::React,
             "react-perf" => Self::ReactPerf,
+            "react-refresh" => Self::ReactRefresh,
             "jsx-a11y" => Self::JSXA11y,
             "oxc" => Self::Oxc,
             "nextjs" => Self::NextJS,
@@ -595,6 +600,7 @@ impl Display for RuleKind {
             Self::Unicorn => write!(f, "eslint-plugin-unicorn"),
             Self::React => write!(f, "eslint-plugin-react"),
             Self::ReactPerf => write!(f, "eslint-plugin-react-perf"),
+            Self::ReactRefresh => write!(f, "eslint-plugin-react-refresh"),
             Self::JSXA11y => write!(f, "eslint-plugin-jsx-a11y"),
             Self::Oxc => write!(f, "oxc"),
             Self::NextJS => write!(f, "eslint-plugin-next"),
@@ -622,6 +628,7 @@ fn main() {
         RuleKind::Unicorn => format!("{UNICORN_TEST_PATH}/{kebab_rule_name}.mjs"),
         RuleKind::React => format!("{REACT_TEST_PATH}/{kebab_rule_name}.js"),
         RuleKind::ReactPerf => format!("{REACT_PERF_TEST_PATH}/{kebab_rule_name}.test.ts"),
+        RuleKind::ReactRefresh => format!("{REACT_REFRESH_TEST_PATH}/{kebab_rule_name}.test.ts"),
         RuleKind::JSXA11y => format!("{JSX_A11Y_TEST_PATH}/{kebab_rule_name}-test.js"),
         RuleKind::NextJS => format!("{NEXT_JS_TEST_PATH}/{kebab_rule_name}.test.ts"),
         RuleKind::JSDoc => format!("{JSDOC_TEST_PATH}/{camel_rule_name}.js"),

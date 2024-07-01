@@ -141,6 +141,9 @@ new-jsdoc-rule name:
 new-react-perf-rule name:
     cargo run -p rulegen {{name}} react-perf
 
+new-react-refresh-rule name:
+    cargo run -p rulegen {{name}} react-refresh
+
 new-n-rule name:
     cargo run -p rulegen {{name}} n
 
