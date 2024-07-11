@@ -100,6 +100,7 @@ pub struct Tester {
     jsx_a11y_plugin: bool,
     nextjs_plugin: bool,
     react_perf_plugin: bool,
+    react_refresh_plugin: bool,
 }
 
 impl Tester {
@@ -127,6 +128,7 @@ impl Tester {
             nextjs_plugin: false,
             react_perf_plugin: false,
             vitest_plugin: false,
+            react_refresh_plugin: false,
         }
     }
 
@@ -169,6 +171,11 @@ impl Tester {
 
     pub fn with_react_perf_plugin(mut self, yes: bool) -> Self {
         self.react_perf_plugin = yes;
+        self
+    }
+
+    pub fn with_react_refresh_plugin(mut self, yes: bool) -> Self {
+        self.react_refresh_plugin = yes;
         self
     }
 

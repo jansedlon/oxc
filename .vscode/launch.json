@@ -14,6 +14,21 @@
         "SERVER_PATH_DEV": "${workspaceRoot}/target/debug/oxc_language_server",
         "RUST_LOG": "debug"
       }
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Cargo test",
+			"cargo": {
+				"args": [
+					"test",
+					"-p",
+					"oxc_linter",
+					"--lib",
+					"no_useless_undefined"
+				]
+			},
+			"args": []
 		}
 	]
 }

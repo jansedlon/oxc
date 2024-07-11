@@ -276,9 +276,9 @@ pub struct FunctionMeta {
 #[derive(Debug, Clone)]
 pub struct RequestedModule {
     span: Span,
-    is_type: bool,
+    pub is_type: bool,
     /// is_import is true if the module is requested by an import statement.
-    is_import: bool,
+    pub is_import: bool,
 }
 
 impl RequestedModule {

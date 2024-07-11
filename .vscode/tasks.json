@@ -31,6 +31,21 @@
 				"panel": "dedicated",
 				"reveal": "never"
 			}
+		},
+		{
+			"type": "shell",
+			"label": "cargo test -p oxc_linter --lib no_useless_undefined",
+			"command": "cargo",
+			"args": [
+				"test",
+				"-p",
+				"oxc_linter",
+				"--lib",
+				"no_useless_undefined"
+			],
+			"problemMatcher": [
+				"$rustc"
+			],
 		}
 	]
 }

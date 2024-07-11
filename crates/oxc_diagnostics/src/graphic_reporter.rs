@@ -406,7 +406,9 @@ impl GraphicalReportHandler {
         for right in labels.iter().cloned() {
             let right_conts = source
                 .read_span(right.inner(), self.context_lines, self.context_lines)
-                .map_err(|_| fmt::Error)?;
+                .map_err(|e| {
+                    println!("{:#?}", e);
+                    fmt::Error })?;
 
             if contexts.is_empty() {
                 contexts.push((right, right_conts));
